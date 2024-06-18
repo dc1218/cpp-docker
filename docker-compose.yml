@@ -1,0 +1,13 @@
+services:  
+  app:   
+    build:  # 使用 Dockerfile 构建镜像  
+      context: .  
+      dockerfile: Dockerfile  
+    container_name: echo  
+    ports:  # 端口映射  
+      - "7000:7000"  
+      - "7171:7171"   
+      - "7172:7172"  
+    volumes:  # 卷挂载  
+      - ./workspace:/home
+  
